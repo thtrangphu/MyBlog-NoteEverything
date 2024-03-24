@@ -1,14 +1,16 @@
-from PyQt6.QtWidgets import QMainWindow, QApplication
-import sys
-from PyQt6 import uic #đọc file .ui 
-
-# Login class kế thừa từ QMainWindow
-# có các thuộc tính và phương thức của QMainWindow
+import sys 
+from PyQt6.QtWidgets import QMainWindow, QApplication 
+from PyQt6 import uic
 class Login(QMainWindow):
-    def __init__ (self) -> None:
-        super().__init__() # gọi hàm khởi tạo của lớp cha
-        uic.loadUi("login.ui", self) # load file .ui vào chương trình
+    def __init__(self) -> None:
+        super().__init__() 
+        uic.loadUi("login.ui", self)
 
-app = QApplication(sys.argv) # tạo 1 ứng dụng giao diện
-login = Login()
-login.show() # hiển thị cửa sổ
+if __name__ == "__main__": 
+    # print(sys.argv)
+    app = QApplication(sys.argv)
+    window = Login()
+    window.show()
+
+
+    sys.exit(app.exec())
